@@ -1,9 +1,9 @@
 {
    "type": "mssql",
    "host": "localhost",
-   "username": "sa",
-   "password": "Admin12345",
-   "database": "tempdb",
+   "username": "huanping",
+   "password": "huanping",
+   "database": "PDashBoard",
    "synchronize": true,
    "logging": false,
    "entities": [

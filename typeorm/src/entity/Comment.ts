@@ -1,24 +1,18 @@
 import {Entity, PrimaryGeneratedColumn, Column} from "typeorm";
 
 @Entity()
-export class User {
+export class Comment {
 
     @PrimaryGeneratedColumn()
     id: number;
 
     @Column()
-    username: string;
+    targetid: number;
 
     @Column()
-    password: string;
+    update: string;
 
     @Column()
-    firstname: string;
-
-    @Column()
-    lastname: string;
-
-    @Column()
-    role: string;
+    userid: number;
 
 }
