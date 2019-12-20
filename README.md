@@ -241,3 +241,157 @@ Update the status or progress in the target for specific user
 ]
 ```
 ---
+
+
+
+
+Restfull Format
+| method | path | action |
+|---|---|---|
+| GET | /users | index(user) |
+| GET | /users/{id} | show|
+| POST| /users | create |
+| PUT | /users/{id} | update |
+| DELETE | /users/{id} | delete |
+| GET | /users/{id}/projescts | index(projest) |
+
+### GET /users
+
+List all users, can be searched or sorted
+
+
+**Query Params**
+
+`id` - number, as a user primary key 
+
+`usermane` - string, will fuzzy search using `LIKE '%name%'`
+
+`password` - number, login standard password
+
+`firstname` - string, user name 
+
+`lastname` - string, user surname
+
+`role` - string, identify different between `LIKE '%users%'` and `LIKE '%admin%'`
+
+**Sample Response** 
+
+```
+[
+    {
+        "id": 1,
+        "username": "Huan Ping",
+        "firstname": "Huan Ping",
+        "lastname": "Chan",
+        "role": "Admin",
+    
+    }
+]
+
+
+[
+    {
+        "id": 2,
+        "username": "Zhi Hao",
+        "firstname": "Zhi Hao",
+        "lastname": "Lim",
+        "role": "User",
+    }
+]
+
+[
+    {
+        "id": 3,
+        "username": "Nathiyah",
+        "firstname": "Nathiyah",
+        "lastname": "Balaiah",
+        "role": "User",
+    }
+]
+```
+
+
+
+## User
+
+#### POST
+
+- user able to create the target page 
+
+- POST /targets (create target) 
+
+```
+[
+    {
+        "id": 2,
+        "username": "Zhi Hao",
+        "firstname": "Zhi Hao",
+        "lastname": "Lim",
+        "role": "User",
+        "Targer" : "create the page on terget"
+    }
+]
+```
+#### PUT
+
+- user able to update the information on target page
+
+- PUT /targets/{id} (update tagret)
+
+```
+[
+    {
+        "id": 2,
+        "username": "Zhi Hao",
+        "firstname": "Zhi Hao",
+        "lastname": "Lim",
+        "role": "User",
+        "Target" : "update the information"
+    }
+]
+```
+
+#### GET
+
+- user able to view the user infromation
+
+- GET /users/{id}/{targetId} (show specific user target)
+
+```
+[
+    {
+        "id": 2,
+        "username": "Zhi Hao",
+        "firstname": "Zhi Hao",
+        "lastname": "Lim",
+        "role": "User",
+        "Target" : "get the user in formation"
+    }
+]
+```
+
+#### GET
+
+- user able to view all the information 
+
+- GET /targets (show all target)
+
+
+```
+[
+    {
+        "id": 2,
+        "username": "Zhi Hao",
+        "firstname": "Zhi Hao",
+        "lastname": "Lim",
+        "role": "User",
+        "Target" : "view all the informations"
+    }
+]
+```
+
+
+
+
+
+
